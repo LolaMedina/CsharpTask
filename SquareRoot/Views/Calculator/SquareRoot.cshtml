@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Square Root Calculator";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Square Root Calculator</h1>
+    <p>Calculate the Square Root of two numbers</p>
+</div>
+
+<div class="text-center">
+    <form asp-controller="Calculator" asp-action="SquareRoot" method="POST">
+        <input type="text" name="FirstNumber" placeholder="First Number">
+        <input type="text" name="SecondNumber" placeholder="Second Number">
+        <button type="submit">Calculate</button>
+    </form>
+    <p>Enter your numbers</p>
+</div>
+
+     @{
+        if(ViewBag.First != null && ViewBag.Second != null){
+           if(ViewBag.SqrtOne ==  ViewBag.SqrtTwo)
+           {
+             <div class="text-center">
+                 <p> The numbers @ViewBag.First and @ViewBag.Second  have the same square root of @ViewBag.SqrtOne <br>Enter another number</p>
+             </diV>
+           }
+            else if(ViewBag.SqrtOne >  ViewBag.SqrtTwo)
+           {
+               <div class="text-center">
+                   <p>The number @ViewBag.First has a Square root of @ViewBag.SqrtOne. The number  @ViewBag.Second has a Square root of  @ViewBag.SqrtTwo <br>
+                      @ViewBag.First has a higher square root than @ViewBag.Second.
+                   </p>
+               </div>
+           }
+           else if(ViewBag.SqrtTwo > ViewBag.SqrtOne )
+           {
+                 <div class="text-center">
+                     <p>
+                         The number @ViewBag.Second has a Square root of @ViewBag.SqrtTwo. The number  @ViewBag.First has a Square root of  @ViewBag.SqrtOne <br>
+                      @ViewBag.Second has a higher square root than @ViewBag.First.
+                     </p>
+                 </div>
+           }
+           else
+           {
+               <div class="text-center">
+                   <p>You have entered a negative number, try again</p>
+               </div>
+
+           }
+        }
+     }  
+     
