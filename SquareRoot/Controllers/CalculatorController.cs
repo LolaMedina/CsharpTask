@@ -18,8 +18,8 @@ namespace SquareRoot.Controllers
           double NumberOne = double.Parse(FirstNumber);
           double NumberTwo = (double.Parse(SecondNumber));
 
-          double SqrtOne = Math.Round(Math.Sqrt(NumberOne),3);
-          double SqrtTwo = Math.Round(Math.Sqrt(NumberTwo),3);
+          double SqrtOne = Math.Round(Math.Sqrt(NumberOne),2);
+          double SqrtTwo = Math.Round(Math.Sqrt(NumberTwo),2);
           
           ViewBag.First = double.Parse(FirstNumber);
           ViewBag.Second = double.Parse(SecondNumber);
